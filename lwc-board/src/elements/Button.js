@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 
-const Button = forwardRef(
-  ({ disabled, type, _onClick, children, ...props }, ref) => {
-    return (
-      <ButtonStyle
-        type={type}
-        ref={ref}
-        onClick={_onClick}
-        disabled={disabled}
-        {...props}
-      >
-        {children}
-      </ButtonStyle>
-    );
-  }
-);
+const Button = ({ disabled, type, _onClick, children, ...props }, ref) => {
+  return (
+    <ButtonStyle
+      type={type}
+      ref={ref}
+      onClick={_onClick}
+      disabled={disabled}
+      {...props}
+    >
+      {children}
+    </ButtonStyle>
+  );
+};
 
 Button.defaultProps = {
   disabled: false,
