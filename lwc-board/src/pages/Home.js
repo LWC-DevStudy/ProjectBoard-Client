@@ -1,7 +1,11 @@
 import React from 'react';
 
+// elements
+import Grid from '../elements/Grid';
+import Text from '../elements/Text';
+
 function Home() {
-  return <div></div>;
+  return <Grid></Grid>;
 }
 
 export default Home;
