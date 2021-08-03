@@ -37,6 +37,7 @@ const GridStyle = styled.div`
   box-shadow: ${(props) => props.shadow};
   box-sizing: border-box;
   transform: translate(${(props) => props.translate});
+  text-align: ${(props) => props.textAlign};
   ${(props) => props.addstyle};
 `;
 
