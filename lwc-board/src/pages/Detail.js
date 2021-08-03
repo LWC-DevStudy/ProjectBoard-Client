@@ -28,7 +28,7 @@ const Detail = () => {
         ></Grid>
       </Grid>
 
-      <Grid width="50%" margin="8% auto 0 auto">
+      <Grid width="50%" margin="3% auto 0 auto">
         <Text color="#d2dae2" margin="0" padding="4px">
           내용
         </Text>
@@ -43,8 +43,8 @@ const Detail = () => {
 
       <Grid
         display="flex"
-        width="20%"
-        margin="8% auto 0 auto"
+        width="10%"
+        margin="3% auto 0 auto"
         textAlign="center"
       >
         <Button
