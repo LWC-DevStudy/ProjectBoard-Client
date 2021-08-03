@@ -16,14 +16,14 @@ const Write = () => {
       </Header>
 
       <Grid width="50%" margin="10% auto 0 auto" padding="12px">
-        <Text color="#d2dae2" margin="0" padding="2px">
+        <Text color="#d2dae2" margin="0" padding="4px">
           제목
         </Text>
         <Input placeholder="제목을 작성해주세요." />
       </Grid>
 
       <Grid width="50%" margin="0 auto" padding="12px">
-        <Text color="#d2dae2" margin="0">
+        <Text color="#d2dae2" margin="0" padding="4px">
           내용
         </Text>
         <textarea
