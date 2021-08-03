@@ -4,7 +4,11 @@ import React from 'react';
 import Grid from '../elements/Grid';
 
 function Home() {
-  return <Grid></Grid>;
+  return (
+    <React.Fragment>
+      <Grid bgColor="#C2B6F2" height="100vh"></Grid>
+    </React.Fragment>
+  );
 }
 
 export default Home;
