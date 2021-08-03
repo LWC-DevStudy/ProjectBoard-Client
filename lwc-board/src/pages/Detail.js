@@ -44,25 +44,26 @@ const Detail = () => {
       <Grid
         display="flex"
         width="20%"
-        margin="10% auto 0 auto"
+        margin="8% auto 0 auto"
         textAlign="center"
       >
-        <Grid>
-          <Button padding="12px 18px" fontSize="16px" bgColor="#d2dae2">
-            <Text margin="0">수정</Text>
-          </Button>
-        </Grid>
+        <Button
+          padding="12px 18px"
+          fontSize="16px"
+          margin="0 auto"
+          bgColor="#d2dae2"
+        >
+          <Text margin="0">수정</Text>
+        </Button>
 
-        <Grid>
-          <Button
-            padding="12px 18px"
-            fontSize="16px"
-            margin="0 auto"
-            bgColor="#d2dae2"
-          >
-            <Text margin="0">삭제</Text>
-          </Button>
-        </Grid>
+        <Button
+          padding="12px 18px"
+          fontSize="16px"
+          margin="0 auto"
+          bgColor="#d2dae2"
+        >
+          <Text margin="0">삭제</Text>
+        </Button>
       </Grid>
     </Grid>
   );
