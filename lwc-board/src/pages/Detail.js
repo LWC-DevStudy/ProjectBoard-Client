@@ -15,9 +15,55 @@ const Detail = () => {
         </Text>
       </Header>
 
-      <Grid width="" bgColor="red">
-        <Text>제목</Text>
-        <Grid width="100%" height="100%" bgColor="yellow"></Grid>
+      <Grid width="50%" margin="5% auto 0 auto">
+        <Text color="#d2dae2" margin="0" padding="4px">
+          제목
+        </Text>
+        <Grid
+          padding="8px"
+          width="100%"
+          height="50px"
+          bgColor="white"
+          radius="12px"
+        ></Grid>
+      </Grid>
+
+      <Grid width="50%" margin="8% auto 0 auto">
+        <Text color="#d2dae2" margin="0" padding="4px">
+          내용
+        </Text>
+        <Grid
+          padding="8px"
+          width="100%"
+          height="300px"
+          bgColor="white"
+          radius="12px"
+        ></Grid>
+      </Grid>
+
+      <Grid
+        display="flex"
+        width="20%"
+        margin="8% auto 0 auto"
+        textAlign="center"
+      >
+        <Button
+          padding="12px 18px"
+          fontSize="16px"
+          margin="0 auto"
+          bgColor="#d2dae2"
+        >
+          <Text margin="0">수정</Text>
+        </Button>
+
+        <Button
+          padding="12px 18px"
+          fontSize="16px"
+          margin="0 auto"
+          bgColor="#d2dae2"
+        >
+          <Text margin="0">삭제</Text>
+        </Button>
       </Grid>
     </Grid>
   );
