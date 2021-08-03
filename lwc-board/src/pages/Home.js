@@ -1,13 +1,15 @@
 import React from 'react';
+
+// style
 import { css } from 'styled-components';
+
 // components
 import Header from '../components/Header';
 
 // elements
-import Grid from '../elements/Grid';
-import Text from '../elements/Text';
-import Button from '../elements/Button';
-function Home() {
+import { Grid, Text, Button } from '../elements/index';
+
+const Home = () => {
   return (
     <React.Fragment>
       <Grid bgColor="#485460" height="100vh" padding="8px">
@@ -64,6 +66,6 @@ function Home() {
       </Grid>
     </React.Fragment>
   );
-}
+};
 
 export default Home;

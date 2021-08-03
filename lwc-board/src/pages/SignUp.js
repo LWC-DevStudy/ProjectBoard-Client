@@ -6,11 +6,11 @@ import Header from '../components/Header';
 // elements
 import { Grid, Text, Input, Button } from '../elements/index';
 
-function SignUp() {
+const SignUp = () => {
   return (
     <Grid bgColor="#485460" display="flex" column height="100vh">
       <Header>
-        <Text fontSize="42px" fontWeight="bold">
+        <Text color="white" fontSize="42px" fontWeight="bold">
           회원가입
         </Text>
       </Header>
@@ -45,6 +45,6 @@ function SignUp() {
       </Button>
     </Grid>
   );
-}
+};
 
 export default SignUp;
