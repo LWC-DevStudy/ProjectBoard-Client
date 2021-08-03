@@ -1,14 +1,8 @@
 import styled from 'styled-components';
 
-const Button = ({ disabled, type, _onClick, children, ...props }, ref) => {
+const Button = ({ disabled, type, _onClick, children, ...props }) => {
   return (
-    <ButtonStyle
-      type={type}
-      ref={ref}
-      onClick={_onClick}
-      disabled={disabled}
-      {...props}
-    >
+    <ButtonStyle type={type} onClick={_onClick} disabled={disabled} {...props}>
       {children}
     </ButtonStyle>
   );
