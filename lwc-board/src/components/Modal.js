@@ -1,7 +1,12 @@
 import React from 'react';
 
-function Modal() {
-  return <div></div>;
-}
+const loginModal = (props) => {
+  const { Open, Close } = props;
+};
 
-export default Modal;
+return (
+  <React.Fragment>
+    <Grid></Grid>
+  </React.Fragment>
+);
+export default loginModal;
