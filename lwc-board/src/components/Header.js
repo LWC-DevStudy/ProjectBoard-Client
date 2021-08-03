@@ -3,13 +3,7 @@ import Grid from '../elements/Grid';
 function Header({ children }) {
   return (
     <React.Fragment>
-      <Grid
-        bgColor="white"
-        padding="30px"
-        margin="2% auto"
-        width="60%"
-        textAlign="center"
-      >
+      <Grid padding="0px" margin="0 auto" width="100%" textAlign="center">
         {children}
       </Grid>
     </React.Fragment>
