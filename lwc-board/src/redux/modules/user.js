@@ -21,16 +21,11 @@ export const SignUpDB = ({ userName, password, passwordConfirm }) => {
 };
 
 // 로그인
-export const LogInDB = (userName, password) => {
+export const LogInDB = ({ userName, password }) => {
   return function (dispatch, getState, { history }) {
     instance
       .post('/login', { userName, password })
       .then((res) => {
-        const message = res.data.message;
-        if (message !== 'success') {
-          window.alert(res.data.message);
-          return;
-        }
         const userInfo = {
           token: res.data.token,
           userName: res.data.user,
