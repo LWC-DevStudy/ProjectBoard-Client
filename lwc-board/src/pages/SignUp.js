@@ -91,16 +91,14 @@ const SignUp = () => {
             ? window.alert(formik.errors.passwordConfirm)
             : null}
         </Grid>
-        <Grid margin="0 auto">
+        <Grid width="7%" margin="0 auto">
           <Button
             bgColor="#d2dae2"
             padding="12px"
             fontSize="16px"
-            margin="1% auto 0 auto"
+            margin="0 auto"
             type="submit"
             value="회원가입"
-            width="100px"
-            display="block"
           >
             <Text margin="0">회원가입</Text>
           </Button>
