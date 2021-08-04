@@ -8,7 +8,7 @@ import { setToken, removeToken } from '../../shared/token';
 export const SignUpDB = (userName, password, passwordConfirm) => {
   return function (dispatch, getState, { history }) {
     instance
-      .post('/resgister', { userName, password, passwordConfirm })
+      .post('/register', { userName, password, passwordConfirm })
       .then((res) => {
         const message = res.data.message;
         if (message !== 'success') {
