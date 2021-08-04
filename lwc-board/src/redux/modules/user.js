@@ -5,14 +5,16 @@ import { createSlice } from '@reduxjs/toolkit';
 import { setToken, removeToken } from '../../shared/token';
 
 // 회원가입
-export const SignUpDB = (userName, password, passwordConfirm) => {
+export const SignUpDB = ({ userName, password, passwordConfirm }) => {
   return function (dispatch, getState, { history }) {
     instance
       .post('/register', { userName, password, passwordConfirm })
       .then((res) => {
+        console.log(res);
         const message = res.data.message;
         if (message !== 'success') {
           window.alert(res.data.message);
+          history.replace('/');
           return;
         }
         window.alert('회원가입을 해주셔서 감사합니다!');
