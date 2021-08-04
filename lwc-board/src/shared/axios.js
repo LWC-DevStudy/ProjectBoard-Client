@@ -5,7 +5,7 @@ import axios from 'axios';
 import { getToken } from './token';
 
 const instance = axios.create({
-  baseURL: '52.78.241.50',
+  baseURL: 'http://52.78.241.50',
 });
 
 instance.interceptors.request.use((config) => {
