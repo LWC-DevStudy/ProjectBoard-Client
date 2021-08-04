@@ -6,7 +6,6 @@ import { useFormik } from 'formik';
 // conponents
 import Header from '../components/Header';
 // reducer
-import { UserCreators } from '../redux/modules/user';
 import { SignUpDB } from '../redux/modules/user';
 // elements
 import { Grid, Text, Input, Button } from '../elements/index';

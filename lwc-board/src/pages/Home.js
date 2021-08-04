@@ -1,23 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { history } from '../redux/configStore';
 // style
 import { css } from 'styled-components';
 
 // components
 import Header from '../components/Header';
-import Modal from '../components/Modal';
 // elements
 import { Grid, Text, Button } from '../elements/index';
 
-const Home = ({ history }) => {
-  const [modalState, setModalState] = useState(false);
-  const openModal = () => {
-    setModalState(true);
-  };
-
-  const closeModal = () => {
-    setModalState(false);
-  };
-
+const Home = (props) => {
   return (
     <React.Fragment>
       <Grid bgColor="#485460" height="100vh" padding="8px">
@@ -29,7 +20,9 @@ const Home = ({ history }) => {
             margin="0px 5px"
             bgColor="#d2dae2"
             color="black"
-            _onClick={openModal}
+            _onClick={() => {
+              history.push('/login');
+            }}
           >
             로그인
           </Button>
@@ -78,7 +71,6 @@ const Home = ({ history }) => {
           </Grid>
         </Grid>
       </Grid>
-      <Modal state={modalState} closeModal={closeModal} />
     </React.Fragment>
   );
 };
