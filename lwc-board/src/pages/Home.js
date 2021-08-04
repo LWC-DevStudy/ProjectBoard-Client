@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 // style
 import { css } from 'styled-components';
 
@@ -9,7 +8,7 @@ import Modal from '../components/Modal';
 // elements
 import { Grid, Text, Button } from '../elements/index';
 
-const Home = () => {
+const Home = ({ history }) => {
   const [modalState, setModalState] = useState(false);
   const openModal = () => {
     setModalState(true);
@@ -41,6 +40,9 @@ const Home = () => {
             margin="0px 10% 0px 5px"
             bgColor="#d2dae2"
             color="black"
+            onClick={() => {
+              history.push('/signup');
+            }}
           >
             회원가입
           </Button>
