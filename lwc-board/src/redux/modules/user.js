@@ -10,15 +10,8 @@ export const SignUpDB = ({ userName, password, passwordConfirm }) => {
     instance
       .post('/register', { userName, password, passwordConfirm })
       .then((res) => {
-        console.log(res);
-        const message = res.data.message;
-        if (message !== 'success') {
-          window.alert(res.data.message);
-          history.replace('/');
-          return;
-        }
         window.alert('회원가입을 해주셔서 감사합니다!');
-        history.replace('/login');
+        history.replace('/');
       })
       .catch((err) => {
         window.alert('오류가 발생했습니다. 관리자에게 문의해주세요.');
