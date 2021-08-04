@@ -69,9 +69,9 @@ const SignUp = () => {
             name="password"
             type="password"
           />
-          {formik.touched.password && formik.errors.password
+          {/* {formik.touched.password && formik.errors.password
             ? window.alert(formik.errors.password)
-            : null}
+            : null} */}
         </Grid>
 
         <Grid width="50%" margin="0 auto" padding="12px">
@@ -86,10 +86,9 @@ const SignUp = () => {
             id="passwordConfirm"
             type="password"
           />
-
-          {formik.touched.passwordConfirm && formik.errors.passwordConfirm
+          {/* {formik.touched.passwordConfirm && formik.errors.passwordConfirm
             ? window.alert(formik.errors.passwordConfirm)
-            : null}
+            : null} */}
         </Grid>
         <Grid width="7%" margin="0 auto">
           <Button
