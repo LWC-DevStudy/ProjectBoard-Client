@@ -1,14 +1,14 @@
-import instance from '../../shard/axios';
+import instance from '../../shared/axios';
 import { createSlice } from '@reduxjs/toolkit';
 
 // functions
-import { setToken, removeToken } from '../../shard/token';
+import { setToken, removeToken } from '../../shared/token';
 
 // 회원가입
 export const SignUpDB = (userName, password, passwordConfirm) => {
   return function (dispatch, getState, { history }) {
     instance
-      .post('/api/resgister', { userName, password, passwordConfirm })
+      .post('/resgister', { userName, password, passwordConfirm })
       .then((res) => {
         const message = res.data.message;
         if (message !== 'success') {
@@ -29,7 +29,7 @@ export const SignUpDB = (userName, password, passwordConfirm) => {
 export const LogInDB = (userName, password) => {
   return function (dispatch, getState, { history }) {
     instance
-      .post('/api/login', { userName, password })
+      .post('/login', { userName, password })
       .then((res) => {
         const message = res.data.message;
         if (message !== 'success') {
