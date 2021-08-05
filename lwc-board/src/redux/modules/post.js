@@ -27,11 +27,9 @@ export const getPostDB = () => {
     instance
       .get('/board')
       .then((res) => {
-        // 오류 날 가능 성 🔼
-        console.log(res);
         let post_list = res.data;
-        console.log(post_list);
         dispatch(getPost(post_list));
+        console.log(post_list);
       })
       .catch((err) => {
         window.alert('페이지에 오류가 있어요!');
@@ -73,7 +71,7 @@ export const editPostDB = (boardId, title, content) => {
 };
 
 const initialState = {
-  list: [],
+  list: [{ title: '안녕하세요' }],
 };
 
 // 리덕스
@@ -88,7 +86,7 @@ const post = createSlice({
     },
 
     getPost: (state, action) => {
-      state.list = action.post_list;
+      state.list = action.payload;
     },
 
     deletePost: (state, action) => {

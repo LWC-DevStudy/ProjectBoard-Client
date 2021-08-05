@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { history } from '../redux/configStore';
 import { useDispatch, useSelector } from 'react-redux';
-
-// redux
-import post, { getPostDB, getPost } from '../redux/modules/post';
-
+import { getPostDB } from '../redux/modules/post';
 // style
 import { css } from 'styled-components';
 
@@ -13,22 +10,14 @@ import Header from '../components/Header';
 // elements
 import { Grid, Text, Button } from '../elements/index';
 
-const Home = (props) => {
+const Home = () => {
   const dispatch = useDispatch();
-  const post_list = useSelector((state) => state.post_list);
+  const post_list = useSelector((state) => state.post.list);
   console.log(post_list);
 
-  useEffect(() => {
-    dispatch(post.getPostDB());
-
-    return () => {
-      dispatch(post.getPost([], 0));
-    };
+  React.useEffect(() => {
+    dispatch(getPostDB());
   }, []);
-
-  // React.useEffect(() => {
-  //   dispatch(getPostDB());
-  // }, []);
 
   return (
     <React.Fragment>
@@ -73,9 +62,29 @@ const Home = (props) => {
           padding="2%"
           bgColor="#d2dae2"
         >
-          {/* {post_list.map((p, idx) => {
-            return <Text key={p._id} {...p}></Text>;
-          })} */}
+          {post_list.map((r, idx) => {
+            return (
+              <Grid
+                bgColor="white"
+                textAlign="center"
+                cursor="pointer"
+                addstyle={() => {
+                  return css`
+                    cursor: pointer;
+                  `;
+                }}
+                radius="8px"
+                width="80%"
+                fontSize="16px"
+                padding="8px"
+                margin="5px auto"
+              >
+                <Text key={r.id} {...r} />
+              </Grid>
+            );
+          })}
+        </Grid>
+        <Grid>
           <Grid
             bgColor="white"
             textAlign="center"
