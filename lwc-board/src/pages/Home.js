@@ -1,5 +1,7 @@
 import React from 'react';
 import { history } from '../redux/configStore';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPostDB } from '../redux/modules/post';
 // style
 import { css } from 'styled-components';
 
@@ -9,6 +11,14 @@ import Header from '../components/Header';
 import { Grid, Text, Button } from '../elements/index';
 
 const Home = (props) => {
+  const dispatch = useDispatch();
+  const post_list = useSelector((state) => state.post);
+  console.log(post_list);
+
+  React.useEffect(() => {
+    dispatch(getPostDB());
+  }, []);
+
   return (
     <React.Fragment>
       <Grid bgColor="#485460" height="100vh" padding="8px">
@@ -52,6 +62,9 @@ const Home = (props) => {
           padding="2%"
           bgColor="#d2dae2"
         >
+          {/* {post_list.map((p, idx) => {
+            return <Text key={p._id} {...p}></Text>;
+          })} */}
           <Grid
             bgColor="white"
             textAlign="center"
