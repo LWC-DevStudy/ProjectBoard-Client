@@ -10,11 +10,13 @@ import { connectRouter } from 'connected-react-router';
 
 // reducer
 import user from './modules/user';
+import post from './modules/post';
 
 const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
   user,
+  post,
   router: connectRouter(history),
 });
 
