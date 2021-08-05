@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import instance from '../../shared/axios';
 import { getToken, setToken } from '../../shared/token';
 
-export const addPostDB = ({ title, content }) => {
+export const addPostDB = (title, content) => {
   return function (dispatch, getState, { history }) {
-    // const token = getToken('token');
-    // instance.defaults.headers.common['Authorization'] = `${token}`;
+    const token = getToken('token');
+    instance.defaults.headers.common['Authorization'] = `${token}`;
     instance
       .post('/board', { title, content })
       .then((res) => {
