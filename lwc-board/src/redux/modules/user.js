@@ -26,11 +26,8 @@ export const LogInDB = ({ userName, password }) => {
     instance
       .post('/login', { userName, password })
       .then((res) => {
-        const userInfo = {
-          token: res.data.token,
-          userName: res.data.user,
-        };
-        dispatch(SetUser(userInfo));
+        dispatch(SetUser(res.data));
+        setToken(res.data);
         window.alert('로그인 성공');
         history.push('/');
         window.location.reload();
@@ -64,8 +61,7 @@ const user = createSlice({
   reducers: {
     // 로그인
     SetUser: (state, action) => {
-      state.user_info = action.payload.userName;
-      setToken('token', action.payload.setToken);
+      setToken('token', action.payload.token);
       state.is_login = true;
     },
     // 로그아웃

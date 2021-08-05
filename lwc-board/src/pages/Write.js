@@ -15,11 +15,22 @@ import { Grid, Text, Input, Button } from '../elements/index';
 const Write = (props) => {
   const dispatch = useDispatch();
 
-  const $title = React.useRef();
-  const $content = React.useRef();
-  // const _addPost = () => {
-  // dispatch();
-  // };
+  // input 값
+  const [content, setContent] = React.useState();
+  const [title, setTitle] = React.useState();
+
+  const $content = (e) => {
+    setContent(e.target.value);
+  };
+
+  const $title = (e) => {
+    setTitle(e.target.value);
+  };
+
+  // 작성btn
+  const writeBtn = () => {
+    dispatch(addPostDB(title, content));
+  };
 
   return (
     <Grid bgColor="#485460" display="flex" column height="100vh">
@@ -35,10 +46,8 @@ const Write = (props) => {
         </Text>
         <Input
           placeholder="제목을 작성해주세요."
-          _ref={$title}
-          // onChange={(e) => {
-          //   console.log(e.target.value);
-          // }}
+          _onChange={$title}
+          value={title || ''}
         />
       </Grid>
 
@@ -54,10 +63,8 @@ const Write = (props) => {
             height: '100%',
             padding: '14px',
           }}
-          ref={$content}
-          // onChange={(e) => {
-          //   console.log(e.target.value);
-          // }}
+          onChange={$content}
+          value={content}
         />
       </Grid>
 
@@ -66,14 +73,7 @@ const Write = (props) => {
         fontSize="16px"
         padding="12px"
         margin="5% auto 0 auto"
-        _onClick={() => {
-          let input_text = {
-            title: $title.current.value,
-            content: $content.current.value,
-          };
-          console.log(input_text);
-          dispatch(addPostDB(input_text));
-        }}
+        _onClick={writeBtn}
       >
         <Text margin="0">작성하기</Text>
       </Button>
