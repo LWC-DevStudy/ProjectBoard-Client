@@ -15,8 +15,8 @@ import post from './modules/post';
 const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
-  user,
-  post,
+  user: user.reducer,
+  post: post.reducer,
   router: connectRouter(history),
 });
 

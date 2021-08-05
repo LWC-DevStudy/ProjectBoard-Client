@@ -27,11 +27,9 @@ export const getPostDB = () => {
     instance
       .get('/board')
       .then((res) => {
-        // 오류 날 가능 성 🔼
-        console.log(res);
         let post_list = res.data;
-        console.log(post_list);
         dispatch(getPost(post_list));
+        console.log(post_list);
       })
       .catch((err) => {
         window.alert('페이지에 오류가 있어요!');
@@ -73,13 +71,13 @@ export const editPostDB = (boardId, title, content) => {
 };
 
 const initialState = {
-  list: [],
+  list: [{ title: '안녕하세요' }],
 };
 
 // 리덕스
 const post = createSlice({
   name: 'post',
-  initialState: [],
+  initialState,
   reducers: {
     addPost: (state, action) => {
       const title = action.payload.title;
@@ -88,10 +86,7 @@ const post = createSlice({
     },
 
     getPost: (state, action) => {
-      // const post = [...action.payload.post_list];
-      // state.list.push({ post });
       state.list = action.payload;
-      // console.log();
     },
 
     deletePost: (state, action) => {
