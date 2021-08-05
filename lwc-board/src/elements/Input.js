@@ -8,6 +8,7 @@ const Input = ({
   placeholder,
   _onChange,
   _onKeyPress,
+  _ref,
   ...props
 }) => {
   return (
@@ -19,6 +20,7 @@ const Input = ({
       onChange={_onChange}
       onKeyPress={_onKeyPress}
       name={name}
+      ref={_ref}
       {...props}
     />
   );
