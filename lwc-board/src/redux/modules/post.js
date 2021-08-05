@@ -3,13 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 import instance from '../../shared/axios';
 import { getToken, setToken } from '../../shared/token';
 
-export const addPostDB = (title, content) => {
+export const addPostDB = ({ title, content }) => {
   return function (dispatch, getState, { history }) {
+    // const token = getToken('token');
+    // instance.defaults.headers.common['Authorization'] = `${token}`;
     instance
       .post('/board', { title, content })
       .then((res) => {
+        console.log(res);
+        dispatch(addPost({ title: title, content: content }));
         window.alert('글 작성이 완료되었습니다!');
-        dispatch(addPost(title, content));
         history.push('/');
       })
       .catch((err) => {

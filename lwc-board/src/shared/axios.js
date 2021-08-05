@@ -12,7 +12,7 @@ instance.interceptors.request.use((config) => {
   config.headers['Content-Type'] = 'application/json; charset=utf-8';
   config.headers['X-Requested-With'] = 'XMLHttpRequest';
   config.headers['Accept'] = '*/*';
-  config.headers['authorization'] = `Bearer ${getToken()}`;
+  config.headers['Authorization'] = `${getToken()}`;
   return config;
 });
 
