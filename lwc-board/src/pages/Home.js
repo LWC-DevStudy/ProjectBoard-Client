@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { history } from '../redux/configStore';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPostDB } from '../redux/modules/post';
+
+// redux
+import post, { getPostDB, getPost } from '../redux/modules/post';
+
 // style
 import { css } from 'styled-components';
 
@@ -12,12 +15,20 @@ import { Grid, Text, Button } from '../elements/index';
 
 const Home = (props) => {
   const dispatch = useDispatch();
-  const post_list = useSelector((state) => state.post);
+  const post_list = useSelector((state) => state.post_list);
   console.log(post_list);
 
-  React.useEffect(() => {
-    dispatch(getPostDB());
+  useEffect(() => {
+    dispatch(post.getPostDB());
+
+    return () => {
+      dispatch(post.getPost([], 0));
+    };
   }, []);
+
+  // React.useEffect(() => {
+  //   dispatch(getPostDB());
+  // }, []);
 
   return (
     <React.Fragment>

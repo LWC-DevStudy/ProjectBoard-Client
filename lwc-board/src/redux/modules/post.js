@@ -79,7 +79,7 @@ const initialState = {
 // 리덕스
 const post = createSlice({
   name: 'post',
-  initialState: [],
+  initialState,
   reducers: {
     addPost: (state, action) => {
       const title = action.payload.title;
@@ -88,10 +88,7 @@ const post = createSlice({
     },
 
     getPost: (state, action) => {
-      // const post = [...action.payload.post_list];
-      // state.list.push({ post });
-      state.list = action.payload;
-      // console.log();
+      state.list = action.post_list;
     },
 
     deletePost: (state, action) => {
